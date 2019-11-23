@@ -1,0 +1,10 @@
+address: localhost
+port: 80
+
+static_dir: ./static/
+
+db:
+  host: docker.for.mac.localhost
+  database: postgres
+  user: postgres
+  password: postgres
