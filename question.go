@@ -20,3 +20,8 @@ func NewQuestion(title string, answers []string, right int) Question {
 		Right:   right,
 	}
 }
+
+func ConvertQuestionsListToJson(q []string) ([]byte, error) {
+	result, err := json.Marshal(q)
+	return result, err
+}
