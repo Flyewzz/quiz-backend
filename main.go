@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"sync"
 
 	"github.com/gorilla/mux"
@@ -12,7 +11,9 @@ import (
 )
 
 func PrepareConfig() {
-	viper.SetConfigFile(os.Args[1])
+	config := "./config/dev.yml"
+	viper.SetConfigType("yaml")
+	viper.SetConfigFile(config)
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatalf("Cannot read a config file: %v\n", err)
 	}
